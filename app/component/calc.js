@@ -47,6 +47,7 @@ class Calc extends React.Component {
   }
 
   handleInput(key) {
+    console.log('input')
     if ('clear' === key) {
       this.setState({
         calc: doCalc(0),
@@ -137,7 +138,7 @@ class CalcBtn extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(e) {
-    this.props.whenClick(e.key);
+    this.props.whenClick(e.target.innerHTML);
   }
   render() {
     return (
