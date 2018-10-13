@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai')
+
+@mixin border-box-setting
+  box-sizing: border-box
+
+*
+  margin: 0
+  padding: 0
+
+body #root>div
+  margin: 30px
+
+  user-select: none
+  -moz-user-select: none
+
+  > div.calc
+    margin: 0 auto
+    width: 600px
+    @include border-box-setting
+    font:
+      size: 70px
+      family: 'Ball Bhai', cursive
+
+    .display-area
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      padding: 15px
+      background: black
+      color: white
+
+    .input-area
+      display: flex
+      flex-flow: row nowrap
+      padding: 0
+      text-align: center
+
+      .left
+        flex: 3
+        @include border-box-setting
+        background: white
+        color: black
+
+        .num
+          flex: 1
+          display: flex
+          flex-flow: row wrap-reverse
+
+        .point
+          flex: 2
+      
+      .right
+        flex: 1
+        display: flex
+        flex-flow: column nowrap
+        @include border-box-setting
+        background: #d42020
+        color: white
+
+.btn
+  @include border-box-setting
+  border: 1px solid black
+    top: none
+  
+  &:hover
+    cursor: pointer
+  
+.num-btn
+  border-right: none
+  width: calc(100% / 3)
+
+.zero-btn
+  width: calc(200% / 3)
+  order: -1
+
+.clear-btn
+  border-right: none
